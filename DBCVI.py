@@ -270,6 +270,7 @@ def DBMSTClu(T0, initial_DBCVI = -1.0, stop_criterion = 1.0, max_nb_clusters = s
     """    
     assert T0.vs['name']
     assert T0.es['weight']
+    assert all(w > 0.0 for w in T0.es['weight'])
     #TODO:
     assert T0.is_connected() #THE CASE WITH DISCONNECTED MST HAS NOT BEEN TESTED YET.
     
